@@ -9,4 +9,4 @@ spec:
     - protocol: TCP
       port: 80        # Service port
       targetPort: 80  # Container port
-  type: LoadBalancer  # Options: ClusterIP, NodePort, LoadBalancer
+  type: ClusterIP  # Options: ClusterIP, NodePort, LoadBalancer
