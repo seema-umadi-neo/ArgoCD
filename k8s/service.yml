@@ -7,7 +7,7 @@ spec:
     app: angular-app
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
+      port: 80        # Service port
+      targetPort: 80  # Container port
+  type: ClusterIP    # Exposes service only within the cluster
 
