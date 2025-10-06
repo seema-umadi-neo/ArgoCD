@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: angular-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: nginx
-  replicas: 2 # Specifies the desired number of Nginx pods
+      app: angular-app
   template:
     metadata:
       labels:
-        app: nginx
+        app: angular-app
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:latest # Uses the latest Nginx image from Docker Hub
+      - name: angular-container
+        image: seemaumadi/angular:latest
         ports:
-        - containerPort: 80 # Exposes port 80 within the container
+        - containerPort: 80
+      imagePullSecrets:
+      - name: dockerhub-secret
+
